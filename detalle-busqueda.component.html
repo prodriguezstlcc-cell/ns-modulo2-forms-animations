@@ -1,0 +1,12 @@
+<ActionBar title="Detalle">
+  <NavigationButton
+    text="Volver"
+    android.systemIcon="ic_menu_back"
+    (tap)="goBack()">
+  </NavigationButton>
+</ActionBar>
+<StackLayout class="card">
+  <Label [text]="'ID: ' + item.id" class="titulo"></Label>
+  <Label [text]="item.titulo" class="titulo"></Label>
+  <Label [text]="item.descripcion" textWrap="true" class="body"></Label>
+</StackLayout>
