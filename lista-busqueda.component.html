@@ -1,0 +1,59 @@
+<ActionBar title="Búsqueda"></ActionBar>
+<StackLayout>
+
+  <!-- Two-way binding [(ngModel)] -->
+  <TextField
+    [(ngModel)]="textoBusqueda"
+    hint="Buscar..."
+    returnKeyType="search">
+  </TextField>
+
+  <Button
+    text="🔔 Mostrar Toast"
+    (tap)="mostrarToast()"
+    class="btn">
+  </Button>
+
+  <!-- Pull to Refresh con ListView y FlexboxLayout anidado -->
+  <PullToRefresh (refresh)="onRefresh($event)">
+    <ListView [items]="items">
+      <ng-template let-item="item">
+        <FlexboxLayout flexDirection="row" alignItems="center" padding="10">
+
+          <Label [text]="item.titulo" flexGrow="1" class="titulo"></Label>
+
+          <!-- Botón action dialog para categoría -->
+          <Label
+            [text]="item.categoria"
+            class="badge"
+            (tap)="onCategoria(item)">
+          </Label>
+
+          <!-- Ícono con gestos doubleTap y longPress -->
+          <Label
+            text="⭐"
+            fontSize="24"
+            (doubleTap)="onDoubleTap($event)"
+            (longPress)="onLongPress($event)">
+          </Label>
+
+        </FlexboxLayout>
+      </ng-template>
+    </ListView>
+  </PullToRefresh>
+
+  <!-- Botón con animación -->
+  <Button
+    text="🔄 Animar"
+    (tap)="animarBoton($event.object)"
+    class="btn">
+  </Button>
+
+  <!-- Tap para ir al detalle -->
+  <Button
+    text="Ver primer item"
+    (tap)="onTap(items[0])"
+    class="btn">
+  </Button>
+
+</StackLayout>
