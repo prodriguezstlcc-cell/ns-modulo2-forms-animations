@@ -1,0 +1,31 @@
+# Módulo 2 — Formularios y Animaciones
+
+Proyecto NativeScript Angular — Módulo 2.
+
+## Requisitos implementados
+
+1. ListView con FlexboxLayout anidado en lista-busqueda
+2. Navegación listado → detalle con RouterExtensions.navigate
+3. Pull to Refresh para actualizar el listado con nuevos items
+4. Action dialog para seleccionar categoría de un item
+5. Toast que notifica al usuario al guardar
+6. Two-way binding [(ngModel)] en campo de búsqueda
+7. Validador personalizado con directiva (PasswordValidatorDirective)
+8. Gestos doubleTap y longPress en ícono de la lista
+9. Animación rotate en botón
+10. Splash Screen personalizado para Android
+
+## Estructura
+```
+src/app/
+├── features/
+│   └── busqueda/
+│       ├── busqueda.module.ts
+│       ├── busqueda-routing.module.ts
+│       └── components/
+│           ├── lista-busqueda/
+│           └── detalle-busqueda/
+└── shared/
+    └── directives/
+        └── password-validator.directive.ts
+```
